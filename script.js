@@ -17,18 +17,22 @@ botao.addEventListener('click', function () {
   const imc = pesoValor / (alturaEmMetros * alturaEmMetros);
   let mensagem = 'Seu IMC é ' + imc.toFixed(1) + '. ';
 
-  if (imc < 18.5) {
-    mensagem += 'Você está abaixo do peso.';
+  if (imc < 16) {
+    mensagem += 'Magreza grave.';
+  } else if (imc < 17) {
+    mensagem += 'Magreza moderada.';
+  } else if (imc < 18.5) {
+    mensagem += 'Magreza leve.';
   } else if (imc < 25) {
-    mensagem += 'Você está no peso ideal.';
+    mensagem += 'Peso normal.';
   } else if (imc < 30) {
-    mensagem += 'Você está com sobrepeso.';
+    mensagem += 'Sobrepeso.';
   } else if (imc < 35) {
-    mensagem += 'Você está com obesidade leve.';
+    mensagem += 'Obesidade grau I.';
   } else if (imc < 40) {
-    mensagem += 'Você está com obesidade moderada.';
+    mensagem += 'Obesidade grau II.';
   } else {
-    mensagem += 'Você está com obesidade grave.';
+    mensagem += 'Obesidade grau III.';
   }
 
   resultado.textContent = mensagem;
